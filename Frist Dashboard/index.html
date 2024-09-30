@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- file Css -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- file Css -->
+    <title>Responsive Admin Dashboard | Redesign</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Start Nav -->
+      <div class="navigation">
+        <ul>
+          <li>
+            <a href="">
+              <span class="icon"><ion-icon name="logo-apple"></ion-icon></span>
+              <span class="title">Brand Name</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span class="icon"
+                ><ion-icon name="home-outline"></ion-icon
+              ></span>
+              <span class="title">Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span class="icon"
+                ><ion-icon name="person-outline"></ion-icon
+              ></span>
+              <span class="title">Customers</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span class="icon"
+                ><ion-icon name="chatbubble-outline"></ion-icon
+              ></span>
+              <span class="title">Message</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span class="icon"
+                ><ion-icon name="help-outline"></ion-icon
+              ></span>
+              <span class="title">Help</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span class="icon"
+                ><ion-icon name="settings-outline"></ion-icon
+              ></span>
+              <span class="title">Setting</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span class="icon"
+                ><ion-icon name="lock-closed-outline"></ion-icon
+              ></span>
+              <span class="title">Password</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span class="icon"
+                ><ion-icon name="log-out-outline"></ion-icon
+              ></span>
+
+              <span class="title">Sing Out</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- End Nav -->
+      <div class="main">
+        <div class="topbar">
+          <div class="toggle">
+            <ion-icon name="menu-outline"></ion-icon>
+          </div>
+          <!-- Search -->
+          <div class="search">
+            <label for="">
+              <input type="text" placeholder="search here" />
+              <ion-icon name="search-outline"></ion-icon>
+            </label>
+          </div>
+          <!-- USer IMG -->
+          <div class="user">
+            <img
+              src="data:image/png;base64,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"
+              alt=""
+            />
+          </div>
+        </div>
+        <!-- card -->
+        <div class="cardBox">
+            <div class="card">
+                <div>
+                    <div class="numbers">1,504</div>
+                    <div class="cardName">Daily Views</div>
+                </div>
+                    <div class="iconBx">
+                        <ion-icon name="eye-outline"></ion-icon>
+
+                
+
+                </div>   
+   
+            </div>
+            <div class="card">
+                <div>
+                    <div class="numbers">80</div>
+                    <div class="cardName">Sales</div>
+                </div>
+                    <div class="iconBx">
+                        <ion-icon name="cart-outline"></ion-icon>
+
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                    <div class="numbers">234</div>
+                    <div class="cardName">Comment</div>
+                </div>
+                    <div class="iconBx">
+                        <ion-icon name="chatbubbles-outline"></ion-icon>
+
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                    <div class="numbers">$7,842</div>
+                    <div class="cardName">Earning</div>
+                </div>
+                    <div class="iconBx">
+                        <ion-icon name="cash-outline"></ion-icon>
+
+                    </div>
+            </div>
+
+                   </div>
+                   <!-- order details List -->
+         <div class="details">
+          
+          <div class="recentOrders">
+            <div class="cardHeader">
+              <h2>Recent Orders</h2>
+              <a href="#" class="btn">View All</a>
+
+            </div>
+            <table>
+              <thead>
+
+                <tr>
+                  <td>Name</td>
+                  <td>Price</td>
+                  <td>Payment</td>
+                  <td> Status</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Star Refriferator</td>
+                  <td>$1200</td>
+                  <td>Paid</td>
+                  <td><span class="status delivered">Delivered</span></td>
+                </tr>
+                <tr>
+                  <td>Adidas Shoes</td>
+                  <td>$620</td>
+                  <td>Paid</td>
+                  <td> <span class="status return">Return</span> </td>
+                </tr>
+                <tr>
+                  <td>Casual Shoes</td>
+                  <td>$575</td>
+                  <td>Paid</td>
+                  <td> <span class="status pending">Pending</span> </td>
+                </tr>
+                <tr>
+                  <td>Wall Fans</td>
+                  <td>$110</td>
+                  <td>Paid</td>
+                  <td> <span class="status inprogress">Pending</span> </td>
+                </tr>
+                <tr>
+                  <td>Denin Shirts</td>
+                  <td>$110</td>
+                  <td>Due</td>
+                  <td> <span class="status delivered">InProgress</span> </td>
+                </tr>
+                <tr>
+                  <td>Wall Fans</td>
+                  <td>$110</td>
+                  <td>Paid</td>
+                  <td> <span class="status pending">Pending</span> </td>
+                </tr>
+                <tr>
+                  <td>Wall Fans</td>
+                  <td>$110</td>
+                  <td>Paid</td>
+                  <td> <span class="status return">Pending</span> </td>
+                </tr>
+                <tr>
+                  <td>Wall Fans</td>
+                  <td>$110</td>
+                  <td>Paid</td>
+                  <td> <span class="status inprogress">Pending</span> </td>
+                </tr>
+                <tr>
+                  <td>Wall Fans</td>
+                  <td>$110</td>
+                  <td>Paid</td>
+                  <td> <span class="status pending">Pending</span> </td>
+                </tr>
+                <tr>
+                  <td>Wall Fans</td>
+                  <td>$110</td>
+                  <td>Paid</td>
+                  <td> <span class="status inprogress">Pending</span> </td>
+                </tr>
+                <tr>
+                  <td>Wall Fans</td>
+                  <td>$110</td>
+                  <td>Paid</td>
+                  <td> <span class="status pending">Pending</span> </td>
+                </tr>
+
+              </tbody>
+              </table>
+          </div>
+          <!-- New Customers -->
+          <div class="receentCustomers">
+            
+              <div class="cardHeader">
+                <h2>Recent Customers</h2>
+              </div>
+                <table>
+                  <tr>
+                    <td width="60px"> <div class="imgBx"><img src="img.jpg"alt=""></div></td>
+                    <td><h4>David  </h4><span>italy</span></td>
+                  </tr>
+                  <tr>
+                    <td width="60px"> <div class="imgBx"><img src="img.jpg"alt=""></div></td>
+                    <td><h4>David> </h4 ><span>italy</span></td>
+                  </tr>
+                  <tr>
+                    <td width="60px"> <div class="imgBx"><img src="img.jpg"alt=""></div></td>
+                    <td><h4>David  </h4><span>italy</span></td>
+                  </tr>
+                  <tr>
+                    <td width="60px"> <div class="imgBx"><img src="img.jpg"alt=""></div></td>
+                    <td><h4>David  </h4><span>italy</span></td>
+                  </tr>
+                  <tr>
+                    <td width="60px"> <div class="imgBx"><img src="img.jpg"alt=""></div></td>
+                    <td><h4>David  </h4><span>italy</span></td>
+                  </tr>
+                  <tr>
+                    <td width="60px"> <div class="imgBx"><img src="img.jpg"alt=""></div></td>
+                    <td><h4>David  </h4><span>italy</span></td>
+                  </tr>
+                  <tr>
+                    <td width="60px"> <div class="imgBx"><img src="img.jpg"alt=""></div></td>
+                    <td><h4>David  </h4><span>italy</span></td>
+                  </tr>
+
+                </table>
+  
+              
+
+
+         </div>          
+                
+
+      </div>
+
+    </div>
+    <!-- ions icons -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <!-- ions icons -->\
+    <script>
+      let list = document.querySelectorAll(".navigation ul li");
+      console.log(list);
+      function activelist() {
+        list.forEach((e) => {
+          e.classList.remove("hovered");
+        });
+        this.classList.add("hovered");
+      }
+      list.forEach((e) => {
+        e.addEventListener("mouseover", activelist);
+      });
+      // menutoggle
+      let toggle = document.querySelector(".toggle");
+      let nav = document.querySelector(".navigation");
+      let main = document.querySelector(".main");
+
+      toggle.onclick = function () {
+        nav.classList.toggle("active");
+        main.classList.toggle("active");
+      };
+    </script>
+  </body>
+</html>

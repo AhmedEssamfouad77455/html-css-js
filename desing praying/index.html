@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+
+    <title>Time Praying</title>
+  </head>
+  <body>
+    <div class="container">
+
+    <div class="data">
+
+      <h3> الشرقيه</h3>
+
+      <div>  2024 ديسمبر  17</div>
+
+    </div>
+    <div class="content">
+      <div class="fajr">
+        <h3>الفجر</h3>
+        
+        <div>4:25pm</div>
+      </div>
+      <div class="dhuhr">
+        <h3>الظهر</h3>
+        
+        <div>4:25pm</div>
+      </div>
+      <div class="asr">
+        <h3>العصر</h3>
+        
+        <div>4:25pm</div>
+      </div>
+      <div class="maghrib">
+        <h3>المغرب</h3>
+        
+        <div>4:25pm</div>
+      </div>
+      
+      <div class="ishah">
+        <h3>العشاء</h3>
+        
+        <div>4:25pm</div>
+      </div>
+      
+    </div>
+
+        <div class="city">
+          <select name="" id="sel">
+            
+        
+          
+     
+     </select>
+      </div>
+    </div>
+
+    <script>
+      let sel = document.getElementById("sel");
+      let fajr = document.querySelector(".fajr div");
+      let dhuhr = document.querySelector(".dhuhr div");
+      let asr = document.querySelector(".asr div");
+      let maghrib = document.querySelector(".maghrib div");
+      let ishah = document.querySelector(".ishah div");
+      let data = document.querySelector(".data div");
+      let datah3 = document.querySelector(".data h3");
+    
+      let cities = [
+        
+      "الشرقيه ", "اسكندريه" , "القاهره"
+    ]
+  
+    for(let city of cities){
+      const content =`
+      <option> ${city} </option>
+      
+      `
+      sel.innerHTML+= content;
+    }
+      function getprayying(cityName){
+
+        parems = {
+          country: "EG",
+          city: cityName,
+        };
+        async function praing() {
+          let qeary = new URLSearchParams(parems).toString();
+  
+          let response = await fetch(
+            `http://api.aladhan.com/v1/timingsByCity?${qeary}`
+          );
+  
+          let jsons = await response.json();
+  
+          console.log(jsons.data);
+          let json = jsons.data;
+          data.innerHTML =""
+          data.innerHTML=
+          `
+          ${json.date.readable}
+          
+          `
+          fajr.innerHTML =""
+          fajr.innerHTML=
+          `
+          ${json.timings.Fajr}
+          
+          `
+          dhuhr .innerHTML =""
+          dhuhr .innerHTML=
+          `
+          ${json.timings.Dhuhr }
+          
+          `
+          dhuhr .innerHTML =""
+          dhuhr .innerHTML=
+          `
+          ${json.timings.Dhuhr }
+          
+          `
+          asr .innerHTML =""
+          asr .innerHTML=
+          `
+          ${json.timings.Asr }
+          
+          `
+          maghrib .innerHTML =""
+          maghrib .innerHTML=
+          `
+          ${json.timings.Maghrib }
+          
+          `
+          ishah .innerHTML =""
+          ishah.innerHTML=
+          `
+          ${json.timings.Isha}
+          
+          `
+          
+          
+          
+          
+        }
+        praing();
+      }
+
+
+    
+      if(window.localStorage.getItem("option")){
+        sel.value = window.localStorage.getItem("option");
+      }
+      sel.addEventListener("change" , function(e){
+        console.log(this.value)
+        window.localStorage.setItem("option"  , this.value);
+        if(this.value =="القاهره"){
+          getprayying("	Al Qāhirah")
+        }
+        else if(this.value == "الاسكندريه"){
+          getprayying("Al Iskandarīyah")
+        }
+        else if(this.value == "الشرقيه"){
+          getprayying("	Ash Sharqīyah")
+        }
+        datah3.innerHTML="";
+        datah3.innerHTML= this.value;
+
+
+    
+        
+      })
+      </script>
+  </body>
+</html>
